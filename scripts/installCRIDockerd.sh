@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VER="0.3.4"
+VER="0.3.13"
 
 install_linux() {
    ARCH=$1
@@ -9,8 +9,9 @@ install_linux() {
       cri-dockerd --version
    else
       echo "Installing cri-dockerd..."
-      wget https://github.com/Mirantis/cri-dockerd/releases/download/v${VER}/cri-dockerd-${VER}.amd64.tgz -P /tmp
-      #wget https://github.com/Mirantis/cri-dockerd/releases/download/${VER}/cri-dockerd-${VER}-linux-${ARCH}.tar.gz -P /tmp
+      # wget https://github.com/Mirantis/cri-dockerd/releases/download/v${VER}/cri-dockerd-${VER}.amd64.tgz -P /tmp
+      # wget https://github.com/Mirantis/cri-dockerd/releases/download/${VER}/cri-dockerd-${VER}-linux-${ARCH}.tar.gz -P /tmp
+      https://github.com/Mirantis/cri-dockerd/releases/download/v${VER}/cri-dockerd-${VER}.${ARCH}.tgz
       tar -xzvf /tmp/cri-dockerd-${VER}.${ARCH}.tgz -C /tmp
       #tar -xzvf /tmp/cri-dockerd-${VER}-linux-${ARCH}.tar.gz -C /tmp
       mv /tmp/cri-dockerd/cri-dockerd /usr/bin/
